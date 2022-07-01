@@ -1,40 +1,66 @@
 * {
+  margin: 0;
+  padding: 0;
   background-color: transparent;
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+  /* Propiedad del elemento  contenedor que queremos que se tome como padre del anclaje para el scroll */
+  scroll-snap-type: y mandatory;
+}
+* *::-webkit-scrollbar {
+  display: none;
 }
 
-div {
+body header {
+  position: fixed;
+  top: 0;
   display: flex;
+  align-items: center;
+  height: 6vh;
+  opacity: 0.5;
+  background-color: #56565a;
+  box-sizing: border-box;
+  box-shadow: 0px 10px 15px #4b4b58;
 }
-
-.section {
-  width: auto;
-  height: 776px;
-  background-color: rgb(47, 48, 56);
+body header nav {
+  width: 100vw;
 }
-
-.seccion-media {
+body header nav ul {
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+}
+body header nav ul li {
+  list-style: none;
+}
+body #fullPage .section {
+  height: 100vh;
+  background-color: #41414b;
+  scroll-snap-align: end;
+}
+body #fullPage .seccion-media {
   background-color: lightslategrey;
 }
-
-.s1 {
-  display: flex;
-  flex-direction: row;
-  width: 100vw;
-  height: 100vh;
-}
-.s1 .all--cards {
+body #fullPage .s1 {
   display: flex;
   flex-direction: row;
 }
-.s1 .all--cards .card {
+body #fullPage .s1 .all--cards {
+  display: flex;
+  flex-direction: row;
+}
+body #fullPage .s1 .all--cards .card {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.s1 .all--cards .card .img {
+body #fullPage .s1 .all--cards .card .img {
   margin: 10px 15px;
 }
-.s1 .all--cards .conteiner--crea {
+body #fullPage .s1 .all--cards .conteiner--crea {
   margin: 15px;
   padding: 0;
   display: flex;
@@ -45,14 +71,19 @@ div {
   border-radius: 10px;
   border-bottom: 15px solid lightseagreen;
 }
-.s1 .all--cards .conteiner--crea .conteiner--crea__content {
+body #fullPage .s1 .all--cards .conteiner--crea .conteiner--crea__content {
   display: flex;
   flex-direction: column;
 }
-
-.flip--card:hover {
+body #fullPage .flip--card:hover {
   animation: flipCard 0.8s;
 }
+body #fullPage .flip--card::after {
+  opacity: 0;
+  z-index: -10;
+  display: none;
+}
+
 @keyframes flipCard {
   0% {
     content: "";
@@ -66,12 +97,6 @@ div {
     transform: rotateY(180deg);
     display: none;
   }
-}
-
-.flip--card::after {
-  opacity: 0;
-  z-index: -10;
-  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */
