@@ -76,7 +76,7 @@ body {
 
         .linea {
             width: 70%;
-            height: 2<px;
+            height: 2px;
             display: block;
             margin: 3px 0px;
             border-radius: 10px;
@@ -102,7 +102,7 @@ body {
         }
 
         .linea1.active {
-            transform: translateY(10px) rotate(45deg);
+            transform: translateY(8px) rotate(45deg);
         }
 
         .linea2Left.active {
@@ -116,7 +116,7 @@ body {
         }
 
         .linea3.active {
-            transform: translateY(-10px) rotate(-45deg);
+            transform: translateY(-8px) rotate(-45deg);
         }
 
         .contenedor-menu.active {
