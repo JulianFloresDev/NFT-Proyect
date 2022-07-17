@@ -156,7 +156,6 @@ body .menu-desplegable.menu-desplegable-activo {
   width: 100%;
   height: 100%;
   border: 2px solid white;
-  fill: black;
 }
 #fullPage .s1 .conteiner_float_img .float_img .float_img_face img {
   display: flex;
