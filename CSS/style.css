@@ -16,6 +16,7 @@
 }
 
 body {
+  position: relative;
   background-image: url("../Multimedia/Background.png");
   background-size: cover;
   background-position: center center;
@@ -100,17 +101,22 @@ body header .contenedor-menu.active {
   box-shadow: 0px 0px 30px 10px rgba(27, 14, 61, 0.5);
 }
 body .menu-desplegable {
-  display: none;
-  position: absolute;
-  z-index: 10;
-  transition: right 600ms;
+  display: flex;
+  position: fixed;
+  z-index: 100;
+  visibility: hidden;
+  top: -80vh;
+  transition: top 0.6s ease-out;
   opacity: 0;
 }
 body .menu-desplegable.menu-desplegable-activo {
+  display: flex;
   position: fixed;
+  visibility: visible;
   right: 12px;
   top: 90px;
   opacity: 1;
+  z-index: 100;
   color: white;
   width: 40vw;
   height: 70vh;
@@ -231,8 +237,8 @@ body .menu-desplegable.menu-desplegable-activo {
   position: relative;
 }
 #fullPage .s1 .hero_conteiner .hero_img .cover_hero_img {
-  width: 400px;
-  height: 90%;
+  width: 350px;
+  height: 80%;
   position: relative;
   z-index: 20;
   border-radius: 20px;
@@ -242,14 +248,28 @@ body .menu-desplegable.menu-desplegable-activo {
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  overflow: hidden;
+  transition: all 0.2s linear;
+}
+#fullPage .s1 .hero_conteiner .hero_img .cover_hero_img:hover {
+  width: 400px;
+  border-top-left-radius: 20%;
+  border-top-right-radius: 20%;
+}
+#fullPage .s1 .hero_conteiner .hero_img .cover_hero_img:hover img {
+  bottom: 0%;
 }
 #fullPage .s1 .hero_conteiner .hero_img .cover_hero_img img {
   height: 95%;
+  position: absolute;
+  bottom: -10%;
+  transition: all 0.2s linear;
 }
 #fullPage .s1 .conteiner_anim_text {
   width: 100%;
   height: auto;
   position: relative;
+  perspective: 1000px;
 }
 #fullPage .s1 .conteiner_anim_text .text_anim_conteiner {
   position: relative;
@@ -302,18 +322,45 @@ body .menu-desplegable.menu-desplegable-activo {
   position: absolute;
 }
 #fullPage .s1 .coin1 {
-  right: 90px;
+  right: 55px;
   bottom: 2%;
+}
+#fullPage .s1 .coin1 img {
+  width: 150px;
 }
 #fullPage .s1 .coin2 {
   top: 0px;
-  left: 150px;
+  left: 120px;
   z-index: 25;
+}
+#fullPage .s1 .coin2 img {
+  width: 80px;
+}
+#fullPage .s1 .coin2:hover {
+  transition: all 1s linear;
+  transform-style: preserve-3d;
+  animation: downAndUp 0.5s linear;
+}
+@keyframes downAndUp {
+  50% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 #fullPage .s1 .coin3 {
   left: 100px;
-  bottom: 150px;
+  bottom: 120px;
   z-index: 10;
+}
+#fullPage .s1 .coin3 img {
+  width: 60px;
+}
+#fullPage .s1 .coin3:hover {
+  transition: all 1s linear;
+  transform-style: preserve-3d;
+  transform: rotateY(720deg);
 }
 .conteiner_float_img {
   width: 100px;
